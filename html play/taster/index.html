@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" id="testpage">
+  <head>
+    <title>Taste the Rainbow</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" href="../assets/css/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Roboto" rel="stylesheet" />
+  </head>
+  <body class="gi">
+    <header>
+      <figure>
+        <img id="logo" src="./../assets/images/unicorn.png" alt="Sparkly Unicorn" />
+        <figcaption class="nv" >
+          Sparkly Unicorn
+        </figcaption>
+      </figure>
+      <h1>
+        Sparkly Unicorn Catering
+      </h1>
+      <nav>
+        <a href="../" class="blank" > Order</a>
+        <a href="../checkout" class="blank">Checkout</a>
+      </nav>
+    </header>
+    <main id="content" >
+      <p>If you have been to us or not and want to try our many varieties, request a taste test today!
+        We will create a sample platter for you special occasion.  We know you'll love it!</p>
+      <form>
+        <fieldset>
+          <legend class="sectionhead" >
+            Request a Taste Test
+          </legend>
+          <ol id="form" class="section" >
+            <li>
+              <label for="yourname">
+                Your Name
+              </label>
+              <input name="yourname" id="yourname" required/>
+              <p class="nv errorn"> Please enter a valid name </p>
+            </li>
+            <li>
+              <label for="yourcontact" >
+                Email or Phone Number
+              </label>
+              <input name="yourcontact" id="yourcontact" />
+              <p class="nv errorc"> Please enter a valid Email or Phone</p>
+            </li>
+            <li id="next" class="next" >
+              <!--Submit time!!!!!-->
+              <input type="submit" id="submit" value="Lets Eat!" />
+              <input type="reset" id="reset" value="Clear Form" />
+            </li>
+          </ol>
+        </fieldset>
+      </form>
+    </main>
+    <footer class="footer">
+      <!--Next two will be buttons that lead to taste test form signup, and another for pdf of menu-->
+      <a href="" class="blank">Taste Test Today!</a>
+      <a href="../assets/images/menu.pdf">Download the Menu</a>
+      <a href="mailto:suc@gmail.com?Subject=ask%20us%20anything">Send Us Email</a>
+    </footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

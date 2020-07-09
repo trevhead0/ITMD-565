@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trevor/ITMD 4/565 Lab 4</title>
+    <!-- Bootstrap CDN
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <style>
+        .content-area {
+            background-color: #fff;
+            border: 2px solid #aaa;
+            min-height: 300px;
+            padding: 10px;
+        }
+    </style>
+    
+    <!-- Add external JS script reference below this comment - script tag should bring in your lab JS file - one JS file for entire lab named userID-lab4.js -->
+    <script src="tlove-lab4.js"></script>
+    <!-- Add external JS script reference above this comment -->
+</head>
+<body>
+    <div class="container">
+        <!-- Content here -->
+        <div class="jumbotron">
+            <h1 class="display-4">ITMD 4/565 Lab 4</h1>
+            <p class="lead">This is a review of some of the basic JavaScript features and DOM manipulation we discussed in class. Please follow the directions in each section below. Do not modify the HTML in the sections below. You should be able to do anything that is requested with the given HTML. The only modifications to this file you will need to do is rename it to your userID-lab4.html, add an external JS file that contains all your application logic in the one file in line 22, named your userID-lab4.js, and change the HTML title tag on line 7 to include your name and which class number you are registered in. <strong>Do not modify any other elements on this HTML page</strong>.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2>Section 1</h2>
+                    <p>For this section you will need to bind an event handler to the 'Alert Me!' button when clicked to get the text out of the text input and use a browser alert to show the provided text. Please make sure you check for an empty text input and if that is detected please alert with the follwoing message, "No alert text has been entered!". When you successfully alert some text the user input make sure to clear out the input text box.</p>
+                    <div class="form-group">
+                        <label for="sec1-input"><strong>Enter Alert Text: </strong></label>
+                        <input type="text" class="form-control" id="sec1-input">
+                    </div>
+                    <button id="sec1-btn1" type="button" class="btn btn-primary">Alert Me!</button>
+                </div>   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2>Section 2</h2>
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>In this section you will be modifing some HTML and CSS via JavaScript. Do not modify the HTML directly, you must do it all in JavaScript. Do not add ids to any elements, you must do the selections with the HTML and attributes that are there already. As a reminder there are multiple methods to select elements in the DOM and some would be more useful here. You can also call these DOM selection methods on an already selected element, vs the document, to search within that elements children. </p>
+                            <ul>
+                                <li>Create and bind and event listener that will do all these changes when the button is clicked.</li>
+                                <li>Change the Headline text to your name.</li>
+                                <li>Change the green box to a grey, #888888, box that is 100% wide and 20px tall.</li>
+                                <li>Change the styles on the paragraph of text so it is bold, italic, and 12px in size.</li>
+                                <li>Change the B&W hamburger icon to the color one provided, change the alt tag to 'Color Hamburger Icon', change the size of the icon so it is only 100px wide.</li>
+                                <li>Change the Google link to a link to the Illinois Tech website, www.iit.edu, and also change the text of the link to 'Illinois Tech Website'.</li>
+                                <li>Change the styling on the link so that it is red, #cc0000, and underlined.</li>
+                            </ul>
+                            <button id="sec2-btn1" type="button" class="btn btn-primary" style="margin-bottom:15px;">Change HTML and CSS</button>
+                        </div>
+                        <div class="col-lg">
+                            <div id="sec2-contentarea" class="content-area">
+                                <h3>My Headline</h3>
+                                <div id="sec2-box" style="background-color: green; width: 100px; height: 50px; margin: 5px 0;"></div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ut esse alias mollitia ipsa nihil possimus cumque dolores, molestiae voluptas commodi deleniti voluptatem. Optio et quod odit excepturi autem. Aliquam?</p>
+                                <img src="img/hamburger_icon.png" alt="B&W Hamburger Icon"><br>
+                                <a href="http://google.com">Google</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2>Section 3</h2>
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>Implement a degress Celsius to degress Fahrenheit converter. Allow the user to enter a celsius degree value in the text box and click convert to see the fahrenheit.</p>
+                            <p>You will need to bind two event handlers to the click event on the two buttons. User enters celsius value in text input. When they click convert button your code should convert the value to fahrenheit and display the results in the results area to the right. Your results should say "xx degress celsius is equal to xx degress fahrenheit" and be in a p tag. Make sure you clear out the text input on a successful conversion. When the user clicks the clear results button you should clear out the results area.</p>
+                            <p>Make sure you test the input for an empty value and alert "No value has been entered!" if the value is empty. Also test for a non-numeric value and alert "A non-numeric value was entered!" if a non-numeric value was provided.</p>
+                            <div class="form-group">
+                                <label for="sec3-input"><strong>Enter degress celsius: </strong></label>
+                                <input type="text" class="form-control" id="sec3-input">
+                            </div>
+                            <button id="sec3-btn1" type="button" class="btn btn-primary">Convert</button>
+                            <button id="sec3-btn2" type="button" class="btn btn-primary">Clear Results</button>
+                        </div>
+                        <div class="col-lg">
+                            <div id="sec3-contentarea" class="content-area">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2>Section 4</h2>
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>In this section you will create a user supplied number of small boxes of a specific color to the results area. The user enters a quantity and chooses a color and you insert that many boxes of that color in the results area. If the user runs it again it will add the the new quantity of colored boxes to the results area. When the user clicks the 'Clear Results' button all the boxes should be removed from the results area.</p>
+                            <p>Make sure you test the quantity input for an empty value and alert "No value has been entered!" if the value is empty. Also test for a non-numeric value and alert "A non-numeric value was entered!" if a non-numeric value was provided.</p>
+                            <p>The boxes should be made from div elements. Each box should have the background color set to the color the user selected. The boxes should use the inline-block css display option so they flow like text instead of one per line like a block element would. Each block should be 60px square and have a 5px margin on all sides.</p>
+                            <p>Students enrolled in the 565 section will need to add the ability to click on any one box to delete it. Make sure you change the css properties so when the mouse is over the box it looks like a pointer to give the user the impression they can click it.</p>
+                            <div class="form-group">
+                                <label for="sec4-input1">Quantity</label>
+                                <input type="text" class="form-control" id="sec4-input1">
+                              </div>
+                              <div class="form-group">
+                                <label for="sec4-select1">Color</label>
+                                <select class="form-control" id="sec4-select1">
+                                  <option value="red">Red</option>
+                                  <option value="green">Green</option>
+                                  <option value="blue">Blue</option>
+                                </select>
+                              </div>
+                            <button id="sec4-btn1" type="button" class="btn btn-primary" style="margin-bottom:15px;">Add Boxes</button>
+                        </div>
+                        <div class="col-lg">
+                            <div id="sec4-contentarea" class="content-area">
+
+                            </div>
+                            <button id="sec4-btn2" type="button" class="btn btn-primary" style="margin-top:15px;">Clear Results</button>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2>Section 5</h2>
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>Keyboard Events. For this section we want the user to be able to type any key in the input box below and show the key that was pressed in the results area.</p>
+                            <p>You will need to bind an event listener to the text input to listen for the correct keyboard event and then using the event object passed to the event handler determine which key was pressed.</p>
+                            <p>Display the pressed key in the results area using a 'span' element with a font size of 60px and bold. There should only be one key displayed in the results area at any time and it should be the last one pressed.</p>
+                            <p>Students enrolled in the 565 section will need to also make sure the text input area is cleared between each key press. The last key pressed should remain in the results area until another is pressed. You may need to listen for a separate keyboard event for this.</p>
+                            <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent" target="_blank">MDN KeyboardEvent Doc</a></p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="sec5-input">
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <h3>Last Key Pressed</h3>
+                            <div id="sec5-contentarea" class="content-area">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2>Section 6</h2>
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>Simple Ajax Get</p>
+                            <p>Use either of the native AJAX methods discussed in class to do a simple get request for a list of users from the sample API provided. You may use XMLHttpRequest or Fetch API here.</p>
+                            <p>Use the API to retrieve a list of users via AJAX. When the user clicks the 'Get Data' button you should send an AJAX request to the correct API endpoint, see documentation, and process the return data to display in the results area to the right. Create a unordered list that includes each users name and email address. Each list item text should be "name, email". After the successful request loads disable the 'Get Data' button. </p>
+                            <p>Bind an event handler to the 'Clear Results' button so that it will remove the user list from the results window and enable the 'Get Data' button again.</p>
+                            <p>API Docs: <a href="https://jsonplaceholder.typicode.com/" target="_blank">https://jsonplaceholder.typicode.com/</a></p>
+                            <button id="sec6-btn1" type="button" class="btn btn-primary">Get Data</button>
+                            <button id="sec6-btn2" type="button" class="btn btn-primary">Clear Results</button>
+
+                        </div>
+                        <div class="col-lg">
+                            <div id="sec6-contentarea" class="content-area">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2>Section 7 - 565 only</h2>
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>Simple Ajax Get v2 - Only for students registered for 565.</p>
+                            <p>Use the native AJAX method that you didn't use in section 6 to do a simple get request for a list of users from the sample API provided.</p>
+                            <p>Same instructions as section 6.</p>
+                            <p>API Docs: <a href="https://jsonplaceholder.typicode.com/" target="_blank">https://jsonplaceholder.typicode.com/</a></p>
+                            <button id="sec7-btn1" type="button" class="btn btn-primary">Get Data</button>
+                            <button id="sec7-btn2" type="button" class="btn btn-primary">Clear Results</button>
+
+                        </div>
+                        <div class="col-lg">
+                            <div id="sec7-contentarea" class="content-area">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+    </div> <!-- end page container -->
+</body>
+</html>

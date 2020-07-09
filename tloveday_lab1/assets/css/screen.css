@@ -1,0 +1,275 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* stylelint-disable*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    display: block
+}
+
+html, .stylelint {
+    line-height: 1
+}
+
+.body {
+    line-height: inherit
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+    blockquote:after, blockquote:before, q:after, q:before {
+        content: '';
+        content: none
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+/* stylelint-enable */
+
+/* Begin site styles below */
+
+/*
+  base font-size: 18px
+  base line-height: 1.2 em
+  1.618/Golden section "Phi" is our modular scale:
+  https://www.modularscale.com/?18&px&1.618
+
+  norm(1.618.Phi)//em(px/18)//lineheight(1.2x)
+  .5x =  11.125px//.618em//.7416em
+  1x  =  18px//1em//21.6(1.2em)
+  1.5x=  23.562//1.309em//1.5708em
+  2x  =  29.124px//1.618em//1.942em
+  3x  =  47.123px//2.618em//3.142em
+  4x  =  76.244px//4.236em//5.083em
+}}
+
+Palette URL: https://coolors.co/ffffff-c99f9f-dbbcbc-2d2d39-989b9f
+#ffffff -white
+#c99f9f -light tuscany
+#dbbcbc -pale silver
+#2d2d39 -gunmetal
+#989b9f   -gray
+Chose this for blue being a long lasting trusted color for reliability.  While we are a new company, we are growing and throwing green into the frey would help push that.  The red is meant to compliment, yet not hurt the eyes.
+
+Font:
+
+
+    
+
+    font-family: 'Inconsolata', monospace;
+
+    font-family: 'Grand Hotel', cursive;
+
+    font-family: 'Indie Flower', cursive;
+
+
+
+*/
+
+
+/* Custom Site Styles */
+
+/* ========== Base Styles ========== */
+/* Base Styles (element selectors; color, typography, and that's it)*/
+html {
+    font-size: 1.125em;
+    background-color: #c99f9f;
+    color: #2d2d39;
+    font-family: 'Inconsolata', monospace;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+body {
+    background-color: #dbbcbc;
+    max-width: 68.22em;
+    margin: auto;
+    min-height:100vh;
+}
+
+h1 {
+    font-size: 3.273em;
+    padding: 0 0 0.5em 0;
+    text-align: left;
+}
+
+h2 {
+    font-size: 1.5708em;
+    padding: 0.75em;
+    padding-top: 1em;
+}
+
+p {
+    padding: 0.5em 0;
+    border: 1em;
+    max-width: 26.66em;
+}
+
+li {
+    list-style-type: none;
+}
+
+label {
+    display: inline-block;
+    min-width: 7em;
+}
+
+input:disabled {
+    background-color: #989b9f;
+}
+
+a {
+    color:black;
+}
+footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+/* ========== Layout ========== */
+/* Layout (id selectors; width/height, position, flexbox, grid)*/
+
+#funName {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+#logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 13vw;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+    #buttons li {
+        text-align: center;
+        padding: 0.5em;
+        margin: 0.25em;
+        background-color: #c99f9f;
+        border-style: solid;
+        border-width: 1px;
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+    }
+
+#description {
+    text-align: left;
+    margin: auto;
+    line-height: 1.5708em;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    align-items: flex-start;
+}
+
+#bot {
+    text-align:center;
+}
+/* ========== Module ========== */
+/* Module/Modular Section (class or descedent selectors; repeating specific styles) */
+
+.nv *, .nv { /*Toggle this class to toggle visibility*/
+    display: none;
+}
+
+.label {
+    padding: 0.5em 0;
+    margin-bottom: 0.5em;
+    -webkit-appearance: none; /*deletes arrows for certain browsers*/
+    -moz-appearance: textfield; /*deletes arrows for certain browsers*/
+}
+
+/* ========== State ========== */
+/* State (repeat the structure above; media queries, JavaScript-dependent styles) */
+@media screen and (min-width: 354px) {
+    h1 {
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 504px) {
+    #form {
+        align-items: center;
+    }
+
+    header, main {
+        border-style: solid;
+        border-width: 2px;
+        padding: 1em 0 0 0;
+        margin-bottom:2em;
+    }
+}
+
+/* */
+@media screen and (min-width: 650px) {
+    /*This is for adding columns and setting stopping paragraph from growing*/
+    #buttons {
+        max-width: 36.11em;
+    }
+    main {
+        max-width: 36.11em;
+        margin:auto;
+    }
+}
+
+@media screen and (min-width: 1078px) {
+
+    html {
+        max-width: 72em;
+        margin: auto;
+    }
+}
+/*Baseline css*/
+/**
+* A quick baseline grid overlay using css+svg.
+* Inspired by [Basehold.it](https://basehold.it/).
+* @author leshido
+*/
+
+body.g {
+    position: relative;
+}
+
+    body.g::after {
+        /* Change the `height` parameter here to match your base line-height. */
+        background: url('data:image/svg+xml;utf8,<svg height="1.2em" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1.619" style="fill:rgba(255, 0, 0, 0.3)" /></svg>') repeat top left;
+        content: "";
+        display: block;
+        pointer-events: none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        position: absolute;
+    }
+
+    body.g:active::after {
+        display: none;
+    }

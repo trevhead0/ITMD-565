@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" id="checkoutpage">
+  <head>
+    <title>Sparkly Unicorns</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" href="../assets/css/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Roboto" rel="stylesheet" />
+  </head>
+  <body class="gi">
+    <header>
+      <figure>
+        <img id="logo" src="./../assets/images/unicorn.png" alt="Sparkly Unicorn" />
+        <figcaption class="nv" >
+          Sparkly Unicorn
+        </figcaption>
+      </figure>
+      <h1>
+        Sparkly Unicorn Catering
+      </h1>
+      <nav>
+        <a href="../" class="blank" > Order</a>
+        <a href="" class="blank">Checkout</a>
+      </nav>
+    </header>
+    <main id="content" >
+      <form id="checkout">
+        <section id="review" class="nv">
+          <h2>Review Order</h2>
+          <ul id="review-list">
+          </ul>
+        </section>
+        <section id="deliveryaddr">
+          <h2>Delivery Information</h2>
+          <ol>
+            <li class="deliveryobj">
+              <label for="phoneoemail">Phone or Email</label>
+              <input type="text" id="phoneoemail" class="input" />
+            </li>
+            <li>
+              <ul>
+                <li class="deliveryobj">
+                  <label for="date">Date</label>
+                  <input type="date" id="date" name="date" />
+                </li>
+                <li>
+                  <input type="checkbox" id="checkbox" value="today" />
+                  <label for="checkbox">Deliver today</label>
+                </li>
+              </ul>
+            </li>
+            <li class="deliveryobj">
+              <label for="time">Time</label>
+              <input type="time"  id="time" name="time" />
+            </li>
+            <li class="deliveryobj">
+              <label for="street">Street Address</label>
+              <input type="text" id="street" class="input" />
+            </li>
+            <li class="deliveryobj">
+              <label for="apartment">Apartment number</label>
+              <input type="text" id="apartment" class="input" />
+            </li>
+            <li class="deliveryobj">
+              <label for="city">City</label>
+              <input type="text" id="city" class="input" />
+            </li>
+            <li class="deliveryobj">
+              <label for="zipcode">Zip Code</label>
+              <input type="number" id="zipcode" class="input" placeholder="00000" />
+            </li>
+          </ol>
+        </section>
+        <section id="paymentinfo">
+          <h2> Payment Information</h2>
+          <ol>
+            <li class="ccobj">
+              <label for="cardname">Name on Card</label>
+              <input type="text" id="cardname" class="input" />
+            </li>
+            <li class="ccobj">
+              <label for="card">Credit Card Number</label>
+              <input type="text" id="card" class="input" placeholder="0000-0000-0000-0000" />
+            </li>
+            <li>
+              <label for="expdate">Expiration Date</label>
+              <input type="text" id="expdate" class="input" placeholder="00/0000" />
+            </li>
+            <li>
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" class="input" placeholder="000" />
+            </li>
+            <li>
+              <label for="billaddr">Billing address same as delivery address</label>
+              <input type="checkbox" id="billaddr" checked="checked" name="delbilladdr" />
+            </li>
+          </ol>
+        </section>
+        <ul id="nextorclear" >
+          <li id="submitbut" class="button" >
+            <a id="checkouts" href="../confirm" class="button">Checkout!</a>
+          </li>
+          <li id="clearbut" class="button" >
+            <a id="mclear" href="#boom" >Clear Choices</a>
+          </li>
+        </ul>
+      </form>
+    </main>
+    <footer class="footer">
+      <!--Next two will be buttons that lead to taste test form signup, and another for pdf of menu-->
+      <a href="../taster" class="blank">Taste Test Today!</a>
+      <a href="../assets/images/menu.pdf">Download the Menu</a>
+      <a href="mailto:suc@gmail.com?Subject=ask%20us%20anything">Send Us Email</a>
+    </footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

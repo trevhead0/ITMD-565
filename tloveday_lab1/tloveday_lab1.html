@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en" id="menupage">
+<head>
+    <title>Lab 1 565</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" href="assets/css/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Inconsolata|Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h3 id="funName">
+            ITMD 565 Lab 1- Trevor Loveday - tloveday@hawk.iit.edu
+        </h3>
+        <h1>
+            Sales Tax Calculator
+        </h1>
+    </header>
+    <main id="content">
+        <p id="description">
+            Enter Subtotal and Tax Rate and click the Calculate button to show the sales tax amount and the total. Click the clear button to clear out all form fields. Tax rate should be a percentage but do not enter a % sign in the tax rate box.
+        </p>
+        <!--Form Submission-->
+        <ul id="form">
+            <li>
+                <!--Subtotal-->
+                <label for="subTotal">
+                    Subtotal
+                </label>
+                <input type="number" step=".01" id="subTotal" class="label" min="0" />
+            </li>
+            <li>
+                <!--Tax Rate-->
+                <label for="taxRate">
+                    Tax Rate
+                </label>
+                <input type="number" step=".01" id="taxRate" class="label" min="0" />
+            </li>
+            <li>
+                <!--Sales Tax(should be disabled for user)-->
+                <label for="salesTax">
+                    Sales Tax
+                </label>
+                <input disabled type="number" step=".01" id="salesTax" class="label" min="0" />
+            </li>
+            <li>
+                <!--Total (Should be disabled for user-->
+                <label for="total">
+                    Total
+                </label>
+                <input disabled type="number" step=".01" id="total" class="label" min="0" />
+            </li>
+        </ul>
+        <ul id="buttons">
+            <li id="calculate" class="button">
+                <a id="calcBut" href="#" onclick="return false" class="button">Calculate Tax and Total</a>
+            </li>
+            <li id="clearbut" class="button">
+                <a id="clearBut" href="#" onclick="return false" class="button">Clear</a>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <figure>
+            <img id="logo" src="./assets/images/money.jpg" alt="Money!" />
+            <figcaption class="nv">
+                Money
+            </figcaption>
+        </figure>
+        <p id="bot"><small>@2020 Trevor Loveday | tloveday@hawk.iit.edu</small></p>
+    </footer>
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

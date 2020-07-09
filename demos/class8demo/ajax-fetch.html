@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Me!</button>
+    <div id="results"></div>
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            console.log('Button Clicked!');
+
+            fetch('http://jsonplaceholder.typicode.com/todos')
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(myJson){
+            console.log(myJson);
+            var table = document.createElement('table');
+            for(var i = 0; i < myJson.length; i++) {
+                console.log(myJson[i]);
+                var row = document.createElement('tr');
+                var cellproduct = document.createElement('td');
+                var protext = document.createTextNode(myJson[i].title);
+                cellproduct.appendChild(protext);
+                row.appendChild(cellproduct);
+                var cellpr = document.createElement('td');
+                var prtext = document.createTextNode(myJson[i].completed);
+                cellpr.appendChild(prtext);
+                row.appendChild(cellpr);
+                table.appendChild(row);
+            }
+            document.getElementById('results').appendChild(table);
+        });
+
+        }, false); //end button click event handler
+    </script>
+</body>
+</html>

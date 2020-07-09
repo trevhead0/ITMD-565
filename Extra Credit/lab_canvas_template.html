@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ITMD-4/565 Lab - Canvas Drawing</title>
+	<style type="text/css">
+		#content-wrapper {
+			width: 600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		#canvasRun {
+			background-color: #c00;
+			border: 0;
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="content-wrapper">
+		<button id="canvasRun">Draw Canvas</button><br><br>
+		<canvas id="myCanvas" width="600" height="450"></canvas>
+	</div>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelector('#canvasRun').addEventListener('click', function () {
+
+				var rotation = 0;
+				var crotation = 0;
+				// Canvas Drawing Code Here
+				var canvas = document.querySelector('#myCanvas');
+				var c = canvas.getContext('2d');
+
+				//The path to the image that we want to add.
+				var imgPath = './logo.png';
+				var imgObj = new Image();
+				imgObj.src = imgPath;
+
+
+				function animate() {
+					requestAnimationFrame(animate);
+
+					c.clearRect(0, 0, canvas.width, canvas.height)
+
+					let grd = c.createLinearGradient(canvas.width / 2, canvas.height, canvas.width / 2, 0);
+					grd.addColorStop(0, "black");
+					grd.addColorStop(1, "white");
+
+					c.fillStyle = grd;
+					c.fillRect(0, 0, canvas.width, canvas.height);
+
+
+					c.font = "30px Comic Sans MS";
+					c.fillStyle = "red";
+					c.textAlign = "center";
+					c.fillText("ITMD 565 Canvas Lab", canvas.width / 2, 40);
+
+					c.font = "15px Comic Sans MS";
+					c.fillStyle = "white";
+					c.textAlign = "left";
+					c.fillText("Trevor Loveday", 20, canvas.height - 40);
+					c.fillText("tloveday@hawk.iit.edu", 20, canvas.height - 20);
+
+					var circle = new Circle(100, 150, 50, 0, 2);
+					circle.draw();
+					var half = new rotCircle(300, 150, 50, 0, 180);
+					half.rotate();
+					var rect = new Rectangle(100, 100);
+					rect.rotate();
+
+					c.drawImage(imgObj, canvas.width - imgObj.width - 10, canvas.height - imgObj.height - 20);
+					//rectangle
+					//c.beginPath();
+					//rect parameters and border
+					// let rectl = 100;
+					// let rectw = 100;
+					// let rectb = 5;
+					// //make border
+					// c.fillStyle = 'white'
+					// c.fillRect(450 - rectb, 100 - rectb, rectw + rectb * 2, rectl + rectb * 2);
+					// c.fill();
+					// //make rect
+					// c.fillStyle = 'rgb(200,0,0,1)';
+					// c.fillRect(450, 100, rectw, rectl);
+					// c.fill();
+					// c.stroke();
+
+					//triangle
+					c.beginPath();
+					c.fillStyle = '#00C800'
+					c.moveTo(50, 325);
+					c.lineTo(150, 325);
+					c.lineTo(100, 250);
+					c.fill();
+
+					c.beginPath();
+					c.fillStyle="white";
+					c.fillRect(240,250,280,100);
+					c.fill();
+					var i;
+					c.lineWidth = "1";
+					c.strokeStyle="black";
+        c.setLineDash([7, 3]);
+				var i;
+				var counter = 0, x=250,y=300;
+				//100 iterations
+				var increase = 90/180*Math.PI/4 ;
+				for(i=250; i<=510; i+=10){
+
+				     c.moveTo(x,y);
+				    x = i;
+				    y=  300 - Math.sin(counter)*20;
+				counter += increase;
+
+				    c.lineTo(x,y);
+				    c.stroke();
+				    //alert( " x : " + x + " y : " + y + " increase : " + counter ) ;
+
+				}
+				}
+				function Rectangle(w, h) {
+					this.x = 450;
+					this.y = 100;
+					this.w = w;
+					this.h = h;
+					this.rectb = 5;
+					this.draw = function () {
+						c.save();
+						c.beginPath();
+						c.translate(this.x + this.w / 2, this.y + this.h / 2);
+						// rotate the rect
+						c.rotate(rotation * Math.PI / 180);
+
+						// draw the rect on the transformed context
+						// Note: after transforming [0,0] is visually [x,y]
+						//       so the rect needs to be offset accordingly when drawn
+						c.rect(-this.w / 2 - this.rectb, -this.h / 2 - this.rectb, this.w + this.rectb * 2, this.h + this.rectb * 2);
+						c.fillStyle = "white";
+						c.fill();
+						c.beginPath();
+						c.rect(-this.w / 2, -this.h / 2, this.w, this.h);
+						c.fillStyle = "#C80000";
+						c.fill();
+						c.restore();
+					}
+					//this.draw();
+					this.rotate = function () {
+						if (rotation >= 360) {
+							rotation = 0;
+						}
+						rotation += 1;
+						this.draw();
+					}
+				}
+
+				function Circle(x, y, r, start, end) {
+					this.draw = function () {
+						c.beginPath();
+						//Circle
+						//c.stokeStyle="blue";
+						c.beginPath();
+						c.fillStyle = "white";
+						c.arc(x, y, r + 5, Math.PI * start, Math.PI * end, false);
+						c.fill();
+						c.beginPath();
+						c.fillStyle = "#0000C8";
+						c.arc(x, y, r, Math.PI * start, Math.PI * end, false);
+						c.fill();
+					}
+				}
+				function rotCircle(x, y, r, start, end) {
+					this.draw = function () {
+						c.beginPath();
+						//Circle
+						//c.stokeStyle="blue";
+						c.beginPath();
+	        c.setLineDash([01, 0]);
+						c.strokeStyle = " #FFA500";
+						c.arc(x, y, r, Math.PI / 180 * (start + crotation), Math.PI / 180 * (end + crotation), false);
+						c.lineWidth = "20";
+						c.stroke();
+
+					}
+					//Ava says hello to whoever reads this in the future!
+					this.rotate = function () {
+						if (crotation <= 0) {
+							crotation = 360;
+						}
+						crotation -= 10;
+						this.draw();
+					}
+				}
+				animate();
+			})
+		})
+	</script>
+</body>
+
+</html>
